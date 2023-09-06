@@ -16,6 +16,7 @@ def main(event, context):
     client.update_schedule(
         Name="name-of-event-schedule",
         FlexibleTimeWindow = {"Mode": "OFF"},
+        ScheduleExpressionTimezone='America/New_York',
         Target={
             "Arn": "arn:aws:lambda:etc-etc-etc",
             "RetryPolicy": {"MaximumEventAgeInSeconds": 86400, "MaximumRetryAttempts": 185},
