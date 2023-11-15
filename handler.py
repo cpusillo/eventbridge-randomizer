@@ -5,7 +5,10 @@ def main(event, context):
     client = boto3.client('scheduler')
 
     # Randomize minutes, hours, and days based on preferences/work day.
-    minutes = random.choice(['00', '15', '30', '45'])
+    minutes = random.randint(0, 60)
+    if minutes < 10:
+        minutes = str(minutes)
+        minutes = "0" + minutes
     hour = random.choice(['10', '11', '12', '13', '14', '15', '16', '17', '18'])
     day = random.choice(['MON','TUE', 'WED', 'THU', 'FRI'])
 
