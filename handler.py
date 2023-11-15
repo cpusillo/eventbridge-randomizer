@@ -28,5 +28,7 @@ def main(event, context):
         ScheduleExpression = cron_expression
     )
 
+    return (resp.get('ResponseMetadata').get('HTTPStatusCode'))
+
 if __name__ == "__main__":
     main("", "")
